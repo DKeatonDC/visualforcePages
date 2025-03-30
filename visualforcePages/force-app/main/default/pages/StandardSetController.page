@@ -1,0 +1,12 @@
+<apex:page Controller="customOppCon">
+        <!-- customOppCon is the name of an apex class.  This page serves as 
+         an example of a visualforce page with a standard set controller--> 	
+<apex:pageBlock ><apex:pageBlockTable value="{! opportunities }" var="op" id="opportunities_list">
+    <!-- op becomes like the variable in "for loops" as you can see below -->
+    <apex:column value="{! op.Name }"/>
+        <apex:column value="{! op.OrderNumber__c }"/>
+    <apex:column value="{! op.amount}"/>
+        <apex:column value="{! op.CloseDate }"/>
+        </apex:pageBlockTable> 
+    </apex:pageBlock>     
+</apex:page>

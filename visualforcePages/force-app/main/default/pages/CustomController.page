@@ -1,0 +1,19 @@
+<apex:page controller="ContactsListWithController" docType="html-5.0" lightningStylesheets="true">
+    <apex:form ><!--Form lets you use input and output values-->
+        <apex:pageBlock title="Contacts List" id="contacts_list">
+        <apex:input type="number" value="{!numValue}" /> 
+            <!--This creates the number.  input is distinct from inputField which lets you edit
+record fields-->
+            <apex:commandButton value="Save"/>
+            <!-- list re-renders the page.  You can also set value to an apex class and execute
+one that way-->
+            <apex:pageBlockTable value="{! contacts }" var="ct"> 
+                <!--Interestingly enoughly using a plural of a standard object in a page block 
+               gives you a list-->
+                <apex:column value="{! ct.FirstName }"/>
+            <apex:column value="{! ct.LastName }"/>
+<apex:column value="{! ct.Title }"/>
+        <apex:column value="{! ct.Email }"/>
+        </apex:pageBlockTable></apex:pageBlock>
+    </apex:form>
+</apex:page>
